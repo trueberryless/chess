@@ -20,7 +20,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers" />
+      <ProjectReference Include="..\Chess.Application\Chess.Application.csproj" />
+      <ProjectReference Include="..\Chess.Domain\Chess.Domain.csproj" />
     </ItemGroup>
 
 </Project>

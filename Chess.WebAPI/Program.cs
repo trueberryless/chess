@@ -1,3 +1,7 @@
+using Chess.Application.Services.Implementations;
+using Chess.Application.Services.Interfaces;
+using Chess.Controllers;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +10,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<IBoardService, DummyBoardService>();
+
+builder.Services.AddScoped<BoardController>();
 
 var app = builder.Build();
 
