@@ -11,8 +11,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IBoardService, DummyBoardService>();
-
+builder.Services.AddScoped<IBoardService, BoardService>();
+builder.Services.AddScoped<IPieceService, PieceService>();
 builder.Services.AddScoped<BoardController>();
 
 var app = builder.Build();

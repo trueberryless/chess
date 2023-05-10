@@ -18,6 +18,17 @@ public class PieceController : Controller
     [HttpPut("{id:int}")]
     public ActionResult<PieceDto> Move(int id)
     {
-        throw new NotImplementedException();
+        try
+        {
+            return Ok(_pieceService.Move(id));
+        }
+        catch (KeyNotFoundException)
+        {
+            return BadRequest();
+        }
+        catch (NotImplementedException)
+        {
+            return StatusCode(501, "NotImplementedException");
+        }
     }
 }
