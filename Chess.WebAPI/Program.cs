@@ -14,6 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IBoardService, BoardService>();
 builder.Services.AddScoped<IPieceService, PieceService>();
 builder.Services.AddScoped<BoardController>();
+builder.Services.AddScoped<PieceController>();
 
 var app = builder.Build();
 
