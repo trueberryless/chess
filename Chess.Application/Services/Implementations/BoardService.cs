@@ -3,18 +3,11 @@ using Chess.Application.Services.Interfaces;
 
 namespace Chess.Application.Services.Implementations;
 
-public class DummyBoardService : IBoardService
+public class BoardService : IBoardService
 {
     public IEnumerable<BoardDto> GetBoards()
     {
-        for (int i = 1; i < 5; i++)
-        {
-            yield return new BoardDto()
-            {
-                Id = i, 
-                CreatedOn = DateTime.Now.AddDays(-i * 4),
-            };
-        }
+        throw new NotImplementedException();
     }
 
     public BoardDto GetBoard(int id)
