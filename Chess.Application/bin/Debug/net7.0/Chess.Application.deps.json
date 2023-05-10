@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v7.0": {
       "Chess.Application/1.0.0": {
+        "dependencies": {
+          "Chess.Domain": "1.0.0"
+        },
         "runtime": {
           "Chess.Application.dll": {}
+        }
+      },
+      "Chess.Domain/1.0.0": {
+        "runtime": {
+          "Chess.Domain.dll": {}
         }
       }
     }
   },
   "libraries": {
     "Chess.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Chess.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

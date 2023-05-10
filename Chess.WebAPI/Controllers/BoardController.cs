@@ -20,42 +20,96 @@ public class BoardController : Controller
     [HttpGet]
     public ActionResult<IEnumerable<BoardDto>> GetBoards()
     {
-        return Ok(_boardService.GetBoards());
-        // Statuscodes: 200 JsonArray: Boards
+        try
+        {
+            return Ok(_boardService.GetBoards());
+        }
+        catch (NotImplementedException e)
+        {
+            return StatusCode(501, "NotImplementedException");
+        }
     }
 
     [HttpGet("{id:int}")]
     public ActionResult<BoardDto> GetBoard(int id)
     {
-        throw new NotImplementedException();
-        // Statuscodes: 200 JsonObject: Board, 400 Invalid Id
+        try
+        {
+            return Ok(_boardService.GetBoard(id));
+        }
+        catch (KeyNotFoundException)
+        {
+            return BadRequest();
+        }
+        catch (NotImplementedException)
+        {
+            return StatusCode(501, "NotImplementedException");
+        }
     }
 
     [HttpPost]
     public ActionResult<BoardDto> CreateBoard()
     {
-        throw new NotImplementedException();
-        // Statuscodes: 200 JsonObject: Board
+        try
+        {
+            return Ok(_boardService.CreateBoard());
+        }
+        catch (NotImplementedException e)
+        {
+            return StatusCode(501, "NotImplementedException");
+        }
     }
 
     [HttpDelete("{id:int}")]
     public ActionResult DeleteBoard(int id)
     {
-        throw new NotImplementedException();
-        // Statuscode: 200, 400 Invalid Id
+        try
+        {
+            _boardService.DeleteBoard(id);
+            return Ok();
+        }
+        catch (KeyNotFoundException)
+        {
+            return BadRequest();
+        }
+        catch (NotImplementedException)
+        {
+            return StatusCode(501, "NotImplementedException");
+        }
     }
 
     [HttpPut("{id:int}")]
     public ActionResult ResetBoard(int id)
     {
-        throw new NotImplementedException();
-        // Statuscodes: 200 JsonObject: Board, 400 Invalid Id
+        try
+        {
+            _boardService.ResetBoard(id);
+            return Ok();
+        }
+        catch (KeyNotFoundException)
+        {
+            return BadRequest();
+        }
+        catch (NotImplementedException)
+        {
+            return StatusCode(501, "NotImplementedException");
+        }
     }
     
     [HttpGet("{id:int}/pieces")]
     public ActionResult<IEnumerable<PieceDto>> GetPieces(int id)
     {
-        throw new NotImplementedException();
-        // Statuscodes: 200 JsonArray: Pieces, 400 Invalid Id
+        try
+        {
+            return Ok(_boardService.GetPieces(id));
+        }
+        catch (KeyNotFoundException)
+        {
+            return BadRequest();
+        }
+        catch (NotImplementedException)
+        {
+            return StatusCode(501, "NotImplementedException");
+        }
     }
 }

@@ -1,6 +1,15 @@
-﻿namespace Chess.Application.DTO;
+﻿using Chess.Domain.Enums;
+using Chess.Domain.ValueObjects;
 
-public class PieceDto
+namespace Chess.Application.DTO;
+
+public record PieceDto
 {
-    
+    public int Id { get; set; }
+
+    public EPieceColor Color { get; set; }
+
+    public EPieceType Type { get; set; }
+
+    public Field? Position { get; set; }
 }
