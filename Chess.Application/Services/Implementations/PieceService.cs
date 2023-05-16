@@ -5,7 +5,12 @@ namespace Chess.Application.Services.Implementations;
 
 public class PieceService : IPieceService
 {
-    public PieceDto Move(int id)
+    public PieceDto Move(MovementDto movementDto)
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool CanMove(MovementDto movementDto)
     {
         throw new NotImplementedException();
     }

@@ -12,7 +12,7 @@ public interface IBoardService
 
     void DeleteBoard(int id);
 
-    void ResetBoard(int id);
+    BoardDto ResetBoard(int id);
 
     IEnumerable<PieceDto> GetPieces(int id);
 }

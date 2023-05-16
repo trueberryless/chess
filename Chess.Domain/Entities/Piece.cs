@@ -7,9 +7,9 @@ public class Piece
 {
     public int Id { get; set; }
 
-    public EPieceColor Color { get; set; }
+    public PieceColor Color { get; set; }
 
-    public EPieceType Type { get; set; }
+    public PieceType Type { get; set; }
 
     public Field? Position { get; set; }
 }

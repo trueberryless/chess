@@ -25,7 +25,7 @@ public class BoardService : IBoardService
         throw new NotImplementedException();
     }
 
-    public void ResetBoard(int id)
+    public BoardDto ResetBoard(int id)
     {
         throw new NotImplementedException();
     }

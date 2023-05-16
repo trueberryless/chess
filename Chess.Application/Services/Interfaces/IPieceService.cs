@@ -4,5 +4,7 @@ namespace Chess.Application.Services.Interfaces;
 
 public interface IPieceService
 {
-    PieceDto Move(int id);
+    PieceDto Move(MovementDto movementDto);
+    
+    bool CanMove(MovementDto movementDto);
 }

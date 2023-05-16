@@ -1,6 +1,6 @@
 ﻿namespace Chess.Domain.Enums;
 
-public enum EPieceColor
+public enum PieceColor
 {
     WHITE,
     BLACK

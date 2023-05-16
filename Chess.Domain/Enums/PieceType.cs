@@ -1,6 +1,6 @@
 ﻿namespace Chess.Domain.Enums;
 
-public enum EPieceType
+public enum PieceType
 {
     PAWN,
     KNIGHT,

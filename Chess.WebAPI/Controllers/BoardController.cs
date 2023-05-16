@@ -79,12 +79,11 @@ public class BoardController : Controller
     }
 
     [HttpPut("{id:int}")]
-    public ActionResult ResetBoard(int id)
+    public ActionResult<BoardDto> ResetBoard(int id)
     {
         try
         {
-            _boardService.ResetBoard(id);
-            return Ok();
+            return Ok(_boardService.ResetBoard(id));
         }
         catch (KeyNotFoundException)
         {

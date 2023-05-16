@@ -7,4 +7,6 @@ public class Board
     public List<Piece> Pieces { get; set; }
     
     public DateTime CreatedOn { get; set; }
+    
+    public int Ply { get; set; }
 }
