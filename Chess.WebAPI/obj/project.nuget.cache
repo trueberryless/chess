@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "kov2xZitPgwe0exKKa2Brybr9eZlcBdAjXzhUw60W/JTYsSK0bD30PHP0md8BjuPE5Qkm8IvZiwRQzz0yAZ8dA==",
+  "dgSpecHash": "moeGNIdHFNYryLXs1qs+psozfQW0VHjOiLE33AL8cql2+xRbdessqVT5DJj5FqOI2HUShScpVB5wNuIzc6OKBw==",
   "success": true,
   "projectFilePath": "D:\\repos\\Chess\\Chess.WebAPI\\Chess.WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\trueberryless\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.1\\microsoft.aspnetcore.openapi.7.0.1.nupkg.sha512",
     "C:\\Users\\trueberryless\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\trueberryless\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0-preview.4.23259.5\\microsoft.extensions.dependencyinjection.abstractions.8.0.0-preview.4.23259.5.nupkg.sha512",
     "C:\\Users\\trueberryless\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
     "C:\\Users\\trueberryless\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\trueberryless\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",

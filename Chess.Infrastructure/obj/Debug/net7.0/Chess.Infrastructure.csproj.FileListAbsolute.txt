@@ -1,0 +1,12 @@
+D:\repos\Chess\Chess.Infrastructure\bin\Debug\net7.0\Chess.Infrastructure.deps.json
+D:\repos\Chess\Chess.Infrastructure\bin\Debug\net7.0\Chess.Infrastructure.dll
+D:\repos\Chess\Chess.Infrastructure\bin\Debug\net7.0\Chess.Infrastructure.pdb
+D:\repos\Chess\Chess.Infrastructure\obj\Debug\net7.0\Chess.Infrastructure.csproj.AssemblyReference.cache
+D:\repos\Chess\Chess.Infrastructure\obj\Debug\net7.0\Chess.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\repos\Chess\Chess.Infrastructure\obj\Debug\net7.0\Chess.Infrastructure.AssemblyInfoInputs.cache
+D:\repos\Chess\Chess.Infrastructure\obj\Debug\net7.0\Chess.Infrastructure.AssemblyInfo.cs
+D:\repos\Chess\Chess.Infrastructure\obj\Debug\net7.0\Chess.Infrastructure.csproj.CoreCompileInputs.cache
+D:\repos\Chess\Chess.Infrastructure\obj\Debug\net7.0\Chess.Infrastructure.dll
+D:\repos\Chess\Chess.Infrastructure\obj\Debug\net7.0\refint\Chess.Infrastructure.dll
+D:\repos\Chess\Chess.Infrastructure\obj\Debug\net7.0\Chess.Infrastructure.pdb
+D:\repos\Chess\Chess.Infrastructure\obj\Debug\net7.0\ref\Chess.Infrastructure.dll

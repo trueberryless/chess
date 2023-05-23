@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "GOEIO9DcAXYZQI2iocz4sJ7DVntHQ7T2MyctRFduj8ZVhj1u7xiXdNqRoKzltE2g5L+JkNqRIgO/AhRC/AW2cQ==",
+  "dgSpecHash": "CweCdG23ew4cY2vkT1PKKVKDY3WJB9BPCiVp1naV+lK8dirYTCeORjZ0rS9p/E3/ImxQt6jtBH858Iguc0PRWA==",
   "success": true,
   "projectFilePath": "D:\\repos\\Chess\\Chess.Application\\Chess.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\trueberryless\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0-preview.4.23259.5\\microsoft.extensions.dependencyinjection.abstractions.8.0.0-preview.4.23259.5.nupkg.sha512"
+  ],
   "logs": []
 }

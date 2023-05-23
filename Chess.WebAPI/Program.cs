@@ -1,6 +1,7 @@
 using Chess.Application.Services.Implementations;
 using Chess.Application.Services.Interfaces;
 using Chess.Controllers;
+using Chess.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,8 @@ builder.Services.AddScoped<IBoardService, BoardService>();
 builder.Services.AddScoped<IPieceService, PieceService>();
 builder.Services.AddScoped<BoardController>();
 builder.Services.AddScoped<PieceController>();
+
+builder.AddInfrastructure();
 
 var app = builder.Build();
 

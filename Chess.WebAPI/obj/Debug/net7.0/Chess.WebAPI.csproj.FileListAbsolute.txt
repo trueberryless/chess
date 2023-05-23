@@ -35,3 +35,6 @@ D:\repos\Chess\Chess.WebAPI\obj\Debug\net7.0\refint\Chess.WebAPI.dll
 D:\repos\Chess\Chess.WebAPI\obj\Debug\net7.0\Chess.WebAPI.pdb
 D:\repos\Chess\Chess.WebAPI\obj\Debug\net7.0\Chess.WebAPI.genruntimeconfig.cache
 D:\repos\Chess\Chess.WebAPI\obj\Debug\net7.0\ref\Chess.WebAPI.dll
+D:\repos\Chess\Chess.WebAPI\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\repos\Chess\Chess.WebAPI\bin\Debug\net7.0\Chess.Infrastructure.dll
+D:\repos\Chess\Chess.WebAPI\bin\Debug\net7.0\Chess.Infrastructure.pdb
