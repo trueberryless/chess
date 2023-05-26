@@ -2,23 +2,55 @@
 using Chess.Domain.Entities;
 using Chess.Domain.Enums;
 using Chess.Domain.ValueObjects;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Chess.Application.Services.Implementations;
 
 public class CompositePieceHandler : IPieceHandler
 {
+    private readonly BishopPieceHandler _bishopPieceHandler;
+    private readonly KingPieceHandler _kingPieceHandler;
+    private readonly KnightPieceHandler _knightPieceHandler;
     private readonly PawnPieceHandler _pawnPieceHandler;
+    private readonly QueenPieceHandler _queenPieceHandler;
+    private readonly RookPieceHandler _rookPieceHandler;
 
-    public CompositePieceHandler(PawnPieceHandler pawnPieceHandler)
+    public CompositePieceHandler(IServiceProvider serviceProvider)
     {
-        _pawnPieceHandler = pawnPieceHandler;
+        _bishopPieceHandler = serviceProvider.GetRequiredService<BishopPieceHandler>();
+        _kingPieceHandler = serviceProvider.GetRequiredService<KingPieceHandler>();
+        _knightPieceHandler = serviceProvider.GetRequiredService<KnightPieceHandler>();
+        _pawnPieceHandler = serviceProvider.GetRequiredService<PawnPieceHandler>();
+        _queenPieceHandler = serviceProvider.GetRequiredService<QueenPieceHandler>();
+        _rookPieceHandler = serviceProvider.GetRequiredService<RookPieceHandler>();
     }
-    
-    public bool CanMove(Board board, Piece piece, Field targetField)
+
+    public bool CanMove(Board board, Piece piece, Field targetField) =>
+        piece.Type switch
+        {
+            PieceType.BISHOP => _bishopPieceHandler.CanMove(board, piece, targetField),
+            PieceType.KING => _kingPieceHandler.CanMove(board, piece, targetField),
+            PieceType.KNIGHT => _knightPieceHandler.CanMove(board, piece, targetField),
+            PieceType.PAWN => _pawnPieceHandler.CanMove(board, piece, targetField),
+            PieceType.QUEEN => _queenPieceHandler.CanMove(board, piece, targetField),
+            PieceType.ROOK => _rookPieceHandler.CanMove(board, piece, targetField),
+            _ => throw new ArgumentOutOfRangeException()
+        };
+
+    public bool IsOccupiedByPiece(Board board, Piece piece, Field targetField)
     {
-        // TODO make switch
-        if (piece.Type == PieceType.PAWN)
-            return _pawnPieceHandler.CanMove(board, piece, targetField);
         throw new NotImplementedException();
     }
+
+    public bool IsBasicMovementAllowed(Piece piece, Field targetField) =>
+        piece.Type switch
+        {
+            PieceType.BISHOP => _bishopPieceHandler.IsBasicMovementAllowed(piece, targetField),
+            PieceType.KING => _kingPieceHandler.IsBasicMovementAllowed(piece, targetField),
+            PieceType.KNIGHT => _knightPieceHandler.IsBasicMovementAllowed(piece, targetField),
+            PieceType.PAWN => _pawnPieceHandler.IsBasicMovementAllowed(piece, targetField),
+            PieceType.QUEEN => _queenPieceHandler.IsBasicMovementAllowed(piece, targetField),
+            PieceType.ROOK => _rookPieceHandler.IsBasicMovementAllowed(piece, targetField),
+            _ => throw new ArgumentOutOfRangeException()
+        };
 }
