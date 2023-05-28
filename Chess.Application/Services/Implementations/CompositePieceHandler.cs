@@ -37,20 +37,15 @@ public class CompositePieceHandler : IPieceHandler
             _ => throw new ArgumentOutOfRangeException()
         };
 
-    public bool IsOccupiedByPiece(Board board, Piece piece, Field targetField)
-    {
-        throw new NotImplementedException();
-    }
-
-    public bool IsBasicMovementAllowed(Piece piece, Field targetField) =>
+    public bool IsBasicMovementAllowed(Board board, Piece piece, Field targetField) =>
         piece.Type switch
         {
-            PieceType.BISHOP => _bishopPieceHandler.IsBasicMovementAllowed(piece, targetField),
-            PieceType.KING => _kingPieceHandler.IsBasicMovementAllowed(piece, targetField),
-            PieceType.KNIGHT => _knightPieceHandler.IsBasicMovementAllowed(piece, targetField),
-            PieceType.PAWN => _pawnPieceHandler.IsBasicMovementAllowed(piece, targetField),
-            PieceType.QUEEN => _queenPieceHandler.IsBasicMovementAllowed(piece, targetField),
-            PieceType.ROOK => _rookPieceHandler.IsBasicMovementAllowed(piece, targetField),
+            PieceType.BISHOP => _bishopPieceHandler.IsBasicMovementAllowed(board, piece, targetField),
+            PieceType.KING => _kingPieceHandler.IsBasicMovementAllowed(board, piece, targetField),
+            PieceType.KNIGHT => _knightPieceHandler.IsBasicMovementAllowed(board, piece, targetField),
+            PieceType.PAWN => _pawnPieceHandler.IsBasicMovementAllowed(board, piece, targetField),
+            PieceType.QUEEN => _queenPieceHandler.IsBasicMovementAllowed(board, piece, targetField),
+            PieceType.ROOK => _rookPieceHandler.IsBasicMovementAllowed(board, piece, targetField),
             _ => throw new ArgumentOutOfRangeException()
         };
 }

@@ -7,8 +7,6 @@ public interface IPieceHandler
 {
     bool CanMove(Board board, Piece piece, Field targetField);
 
-    bool IsOccupiedByPiece(Board board, Piece piece, Field targetField);
-
-    bool IsBasicMovementAllowed(Piece piece, Field targetField);
+    bool IsBasicMovementAllowed(Board board, Piece piece, Field targetField);
     
 }
