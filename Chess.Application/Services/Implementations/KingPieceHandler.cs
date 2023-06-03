@@ -8,10 +8,12 @@ namespace Chess.Application.Services.Implementations;
 public class KingPieceHandler : IPieceHandler
 {
     private readonly CompositePieceHandler _compositePieceHandler;
+    private readonly IMovable _movement;
 
-    public KingPieceHandler(CompositePieceHandler compositePieceHandler)
+    public KingPieceHandler(CompositePieceHandler compositePieceHandler, IMovable movement)
     {
         _compositePieceHandler = compositePieceHandler;
+        _movement = movement;
     }
 
     public bool CanMove(Board board, Piece piece, Field targetField)
@@ -59,56 +61,8 @@ public class KingPieceHandler : IPieceHandler
         return true;
     }
 
-    public bool IsBasicMovementAllowed(Board board, Piece piece, Field targetField)
-    {
-        #region Check if movement of piece is valid
+    // Castling is not implemented yet
+    public bool IsBasicMovementAllowed(Board board, Piece piece, Field targetField) =>
+        _movement.CanMoveOneSquare(board, piece, targetField);
 
-        if (targetField.X is > 7 or < 0 || targetField.Y is > 7 or < 0)
-            return false;
-
-        if (piece.Position == null)
-            return false;
-
-        if (!OneSquareAway(piece.Position, targetField))
-            return false;
-
-        #endregion
-
-        #region Check if opponent king is not near own king
-        
-        var opponentPieceColor = piece.Color == PieceColor.WHITE ? PieceColor.BLACK : PieceColor.WHITE;
-
-        var opponentKingPosition = board.Pieces
-            .FirstOrDefault(p => p.Color == opponentPieceColor && p.Type == PieceType.KING)
-            ?.Position;
-        
-        if (opponentKingPosition == null)
-            return false;
-
-        if (OneSquareAway(opponentKingPosition, targetField))
-            return false;
-
-        #endregion
-
-        #region Check if targetField is not occupied by own piece
-
-        if (board.Pieces.All(otherPiece => otherPiece.Position == targetField && otherPiece.Color == piece.Color))
-            return false;
-
-        #endregion
-
-        return false;
-    }
-
-    private bool OneSquareAway(Field p1, Field p2)
-    {
-        return (p1.X + 0 == p2.X && p1.Y + 1 == p2.Y) ||
-               (p1.X + 1 == p2.X && p1.Y + 1 == p2.Y) ||
-               (p1.X + 1 == p2.X && p1.Y - 0 == p2.Y) ||
-               (p1.X + 1 == p2.X && p1.Y - 1 == p2.Y) ||
-               (p1.X - 0 == p2.X && p1.Y - 1 == p2.Y) ||
-               (p1.X - 1 == p2.X && p1.Y - 1 == p2.Y) ||
-               (p1.X - 1 == p2.X && p1.Y + 0 == p2.Y) ||
-               (p1.X - 1 == p2.X && p1.Y + 1 == p2.Y);
-    }
 }

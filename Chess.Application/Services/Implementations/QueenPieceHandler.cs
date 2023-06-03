@@ -8,10 +8,12 @@ namespace Chess.Application.Services.Implementations;
 public class QueenPieceHandler : IPieceHandler
 {
     private readonly CompositePieceHandler _compositePieceHandler;
+    private readonly IMovable _movement;
 
-    public QueenPieceHandler(CompositePieceHandler compositePieceHandler)
+    public QueenPieceHandler(CompositePieceHandler compositePieceHandler, IMovable movement)
     {
         _compositePieceHandler = compositePieceHandler;
+        _movement = movement;
     }
     
     public bool CanMove(Board board, Piece piece, Field targetField)
@@ -59,8 +61,6 @@ public class QueenPieceHandler : IPieceHandler
         return true;
     }
 
-    public bool IsBasicMovementAllowed(Board board, Piece piece, Field targetField)
-    {
-        throw new NotImplementedException();
-    }
+    public bool IsBasicMovementAllowed(Board board, Piece piece, Field targetField) =>
+        _movement.CanMoveOrthogonal(board, piece, targetField) || _movement.CanMoveDiagonal(board, piece, targetField);
 }

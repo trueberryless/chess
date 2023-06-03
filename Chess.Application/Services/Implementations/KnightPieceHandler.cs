@@ -8,10 +8,12 @@ namespace Chess.Application.Services.Implementations;
 public class KnightPieceHandler : IPieceHandler
 {
     private readonly CompositePieceHandler _compositePieceHandler;
+    private readonly IMovable _movement;
 
-    public KnightPieceHandler(CompositePieceHandler compositePieceHandler)
+    public KnightPieceHandler(CompositePieceHandler compositePieceHandler, IMovable movement)
     {
         _compositePieceHandler = compositePieceHandler;
+        _movement = movement;
     }
 
     public bool CanMove(Board board, Piece piece, Field targetField)
@@ -59,35 +61,7 @@ public class KnightPieceHandler : IPieceHandler
         return true;
     }
 
-    public bool IsBasicMovementAllowed(Board board, Piece piece, Field targetField)
-    {
-        #region Check if movement of piece is valid
-
-        if (targetField.X is > 7 or < 0 || targetField.Y is > 7 or < 0)
-            return false;
-
-        if (piece.Position == null)
-            return false;
-
-        if (!((piece.Position.X + 1 == targetField.X && piece.Position.Y + 2 == targetField.Y) ||
-              (piece.Position.X + 2 == targetField.X && piece.Position.Y + 1 == targetField.Y) ||
-              (piece.Position.X + 2 == targetField.X && piece.Position.Y - 1 == targetField.Y) ||
-              (piece.Position.X + 1 == targetField.X && piece.Position.Y - 2 == targetField.Y) ||
-              (piece.Position.X - 1 == targetField.X && piece.Position.Y - 2 == targetField.Y) ||
-              (piece.Position.X - 2 == targetField.X && piece.Position.Y - 1 == targetField.Y) ||
-              (piece.Position.X - 2 == targetField.X && piece.Position.Y + 1 == targetField.Y) ||
-              (piece.Position.X - 1 == targetField.X && piece.Position.Y + 2 == targetField.Y)))
-            return false;
-
-        #endregion
-
-        #region Check if targetField is not occupied by own piece
-
-        if (board.Pieces.All(otherPiece => otherPiece.Position == targetField && otherPiece.Color == piece.Color))
-            return false;
-
-        #endregion
-
-        return true;
-    }
+    // En passant is not implemented yet
+    public bool IsBasicMovementAllowed(Board board, Piece piece, Field targetField) =>
+        _movement.CanMoveAngular(board, piece, targetField);
 }

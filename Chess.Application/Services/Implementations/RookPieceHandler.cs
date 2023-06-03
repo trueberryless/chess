@@ -8,12 +8,14 @@ namespace Chess.Application.Services.Implementations;
 public class RookPieceHandler : IPieceHandler
 {
     private readonly CompositePieceHandler _compositePieceHandler;
+    private readonly IMovable _movement;
 
-    public RookPieceHandler(CompositePieceHandler compositePieceHandler)
+    public RookPieceHandler(CompositePieceHandler compositePieceHandler, IMovable movement)
     {
         _compositePieceHandler = compositePieceHandler;
+        _movement = movement;
     }
-    
+
     public bool CanMove(Board board, Piece piece, Field targetField)
     {
         #region Check for exceptions
@@ -59,8 +61,6 @@ public class RookPieceHandler : IPieceHandler
         return true;
     }
 
-    public bool IsBasicMovementAllowed(Board board, Piece piece, Field targetField)
-    {
-        throw new NotImplementedException();
-    }
+    public bool IsBasicMovementAllowed(Board board, Piece piece, Field targetField) =>
+        _movement.CanMoveOrthogonal(board, piece, targetField);
 }

@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "CweCdG23ew4cY2vkT1PKKVKDY3WJB9BPCiVp1naV+lK8dirYTCeORjZ0rS9p/E3/ImxQt6jtBH858Iguc0PRWA==",
+  "dgSpecHash": "hYe6Swgz6yiLdualfVUrx2xTB9IJj4HZ2w/zvJ57AQWIUQHsuAwj1kS2+bCnWkE+bAaVZmI/mOsvp2r5UDmQXQ==",
   "success": true,
   "projectFilePath": "D:\\repos\\Chess\\Chess.Application\\Chess.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\trueberryless\\.nuget\\packages\\mapster\\7.4.0-pre06\\mapster.7.4.0-pre06.nupkg.sha512",
+    "C:\\Users\\trueberryless\\.nuget\\packages\\mapster.core\\1.2.1-pre04\\mapster.core.1.2.1-pre04.nupkg.sha512",
     "C:\\Users\\trueberryless\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0-preview.4.23259.5\\microsoft.extensions.dependencyinjection.abstractions.8.0.0-preview.4.23259.5.nupkg.sha512"
   ],
   "logs": []

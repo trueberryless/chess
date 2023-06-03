@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "moeGNIdHFNYryLXs1qs+psozfQW0VHjOiLE33AL8cql2+xRbdessqVT5DJj5FqOI2HUShScpVB5wNuIzc6OKBw==",
+  "dgSpecHash": "q04samiC/di61rMOUYHMce1EJ8XfnvMFERZCMMnuiBalkzuo7vDFB0jyf/dLIYanmkOL0eV1IoKQrdjS8+wNvA==",
   "success": true,
   "projectFilePath": "D:\\repos\\Chess\\Chess.WebAPI\\Chess.WebAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\trueberryless\\.nuget\\packages\\mapster\\7.4.0-pre06\\mapster.7.4.0-pre06.nupkg.sha512",
+    "C:\\Users\\trueberryless\\.nuget\\packages\\mapster.core\\1.2.1-pre04\\mapster.core.1.2.1-pre04.nupkg.sha512",
     "C:\\Users\\trueberryless\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.1\\microsoft.aspnetcore.openapi.7.0.1.nupkg.sha512",
     "C:\\Users\\trueberryless\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\trueberryless\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0-preview.4.23259.5\\microsoft.extensions.dependencyinjection.abstractions.8.0.0-preview.4.23259.5.nupkg.sha512",
